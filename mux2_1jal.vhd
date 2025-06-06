@@ -8,8 +8,8 @@ entity mux2_1jal is
 	port (
 		Sel: 	in std_logic;
 		A: 	in std_logic_vector(31 downto 0);
-		B:		in std_logic_vector(31 downto 0);
-		R:		out std_logic_vector(31 downto 0)
+		B:	in std_logic_vector(31 downto 0);
+		R:	out std_logic_vector(31 downto 0)
 	);
 end mux2_1jal;
 
