@@ -52,98 +52,98 @@ architecture arc of unidadeDeControle is
 				case opcode is 
 				-- Instruções do tipo-R (add, sub, and, or, slt)
 					when "0110011"	=>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "010";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "010";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '0';
+						aux_OrigULA 	<= '0';
 						aux_EscreveReg 	<= '1';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 			
 						-- Instrução lw  OK
 					when "0000011" =>
-						aux_Mem2Reg 		<= '1';
-						aux_LeMem			<= '1';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "000";
+						aux_Mem2Reg 	<= '1';
+						aux_LeMem	<= '1';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "000";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '1';
+						aux_OrigULA 	<= '1';
 						aux_EscreveReg 	<= '1';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 						
 						-- Instrução sw  OK
 					when "0100011" =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "000";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "000";
 						aux_EscreveMem 	<= '1';
-						aux_OrigULA 		<= '1';
+						aux_OrigULA 	<= '1';
 						aux_EscreveReg 	<= '0';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 						
 						-- Instrução beq  OK
 					when "1100011" =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '1';
-						aux_ALUop 			<= "001";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '1';
+						aux_ALUop 	<= "001";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '0';
+						aux_OrigULA 	<= '0';
 						aux_EscreveReg 	<= '0';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 						
 					-- Instruções do tipo-I (addi)  Ok
 					when "0010011" =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "011";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "011";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '1';
+						aux_OrigULA 	<= '1';
 						aux_EscreveReg 	<= '1';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 						
 					-- Instrução jal  OK
 					when "1101111" =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '1';
-						aux_ALUop 			<= "100";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '1';
+						aux_ALUop 	<= "100";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '0';
+						aux_OrigULA 	<= '0';
 						aux_EscreveReg 	<= '1';
-						aux_JAL 				<= '1';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '1';
+						aux_JALR 	<= '0';
 					
 					-- Instrução jalr  OK
 					when "1100111" =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "011";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "011";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '1';
+						aux_OrigULA 	<= '1';
 						aux_EscreveReg 	<= '1';
-						aux_JAL 				<= '1';
-						aux_JALR 			<= '1';
+						aux_JAL 	<= '1';
+						aux_JALR 	<= '1';
 						
 					when others =>
-						aux_Mem2Reg 		<= '0';
-						aux_LeMem			<= '0';
-						aux_Branch 			<= '0';
-						aux_ALUop 			<= "000";
+						aux_Mem2Reg 	<= '0';
+						aux_LeMem	<= '0';
+						aux_Branch 	<= '0';
+						aux_ALUop 	<= "000";
 						aux_EscreveMem 	<= '0';
-						aux_OrigULA 		<= '0';
+						aux_OrigULA 	<= '0';
 						aux_EscreveReg 	<= '0';
-						aux_JAL 				<= '0';
-						aux_JALR 			<= '0';
+						aux_JAL 	<= '0';
+						aux_JALR 	<= '0';
 	end case;
 	end process;
 end arc;
